@@ -27,7 +27,7 @@ async function start() {
                 level: 'silent'
             }),
             printQRInTerminal: false,
-            browser : ['Dark-Nero'],
+            browser : ['DARK-SHADOW'],
             auth: state,
             version
         })
@@ -50,7 +50,7 @@ async function start() {
                 const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${user_jid}.json`);
                 const string_session = mega_url.replace('https://mega.nz/file/', '')
                 await sock.sendMessage(user_jid, {
-                    text: `Darknero=${string_session}`
+                    text: `DARK-SHADOW=${string_session}`
                 });
                 await sock.ws.close()
                 fs.rmSync(auth_path, {
