@@ -27,7 +27,7 @@ async function start() {
                 level: 'silent'
             }),
             printQRInTerminal: false,
-            browser : Browsers.safari("DARK-SHADOW"),
+            browser : Browsers.macOS("DARK-SHADOW"),
             auth: state,
             version
         })
