@@ -27,9 +27,9 @@ async function start() {
                 level: 'silent'
             }),
             printQRInTerminal: false,
-            browser : Browsers.macOS("DARK-SHADOW"),
-            auth: state,
-            version
+                    browser: Browsers.macOS("Desktop"),
+                    auth: state,
+                    version
         })
         sock.ev.on('creds.update', saveCreds)
 
