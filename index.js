@@ -27,7 +27,7 @@ async function start() {
                 level: 'silent'
             }),
             printQRInTerminal: false,
-                    browser: ['DARK SHADOW'],
+                    browser: ['DARK-SHADOW-BOT'],
                     auth: state,
                     version
         })
@@ -51,6 +51,9 @@ async function start() {
                 const string_session = mega_url.replace('https://mega.nz/file/', '')
                 await sock.sendMessage(user_jid, {
                     text: `DARK-SHADOW=${string_session}`
+                });
+                await sock.sendMessage(user_jid, {
+                    text: `*ᴅᴇᴀʀ ᴜsᴇʀ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇssɪᴏɴ ɪᴅ*\n\n◕ ⚠️ *ᴘʟᴇᴀsᴇ ᴅᴏ ɴᴏᴛ sʜᴀʀᴇ ᴛʜɪs ᴄᴏᴅᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ ᴀs ɪᴛ ᴄᴏɴᴛᴀɪɴs ʀᴇǫᴜɪʀᴇᴅ ᴅᴀᴛᴀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴄᴏɴᴛᴀᴄᴛ ᴅᴇᴛᴀɪʟs ᴀɴᴅ ᴀᴄᴄᴇss ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ*`
                 });
                 await sock.ws.close()
                 fs.rmSync(auth_path, {
