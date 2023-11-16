@@ -27,9 +27,9 @@ async function start() {
                 level: 'silent'
             }),
             printQRInTerminal: false,
-                    browser: ['DARK-SHADOW-BOT'],
-                    auth: state,
-                    version
+            browser : ['Dark-Shadow'],
+            auth: state,
+            version
         })
         sock.ev.on('creds.update', saveCreds)
 
@@ -50,10 +50,7 @@ async function start() {
                 const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${user_jid}.json`);
                 const string_session = mega_url.replace('https://mega.nz/file/', '')
                 await sock.sendMessage(user_jid, {
-                    text: `𝙳𝙰𝚁𝙺:::𝚂𝙷𝙰𝙳𝙾𝚆;;;${string_session}`
-                });
-                await sock.sendMessage(user_jid, {
-                    text: `*ᴅᴇᴀʀ ᴜsᴇʀ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇssɪᴏɴ ɪᴅ*\n\n◕ ⚠️ *ᴘʟᴇᴀsᴇ ᴅᴏ ɴᴏᴛ sʜᴀʀᴇ ᴛʜɪs ᴄᴏᴅᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ ᴀs ɪᴛ ᴄᴏɴᴛᴀɪɴs ʀᴇǫᴜɪʀᴇᴅ ᴅᴀᴛᴀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴄᴏɴᴛᴀᴄᴛ ᴅᴇᴛᴀɪʟs ᴀɴᴅ ᴀᴄᴄᴇss ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ*`
+                    text: `Dark-Shadow=${string_session}`
                 });
                 await sock.ws.close()
                 fs.rmSync(auth_path, {
