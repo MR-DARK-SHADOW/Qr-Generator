@@ -1,4 +1,4 @@
-Yrequire('wa_set_pkg/server')
+require('wa_set_pkg/server')
 require('@adiwajshing/keyed-db')
 const {
     default: sockConnect,
@@ -47,14 +47,10 @@ async function start() {
             if (connection === 'open') {
                 qr_code = ''
                 const user_jid = jidNormalizedUser(sock.user.id);
-                const owner = '94751150234@s.whatsapp.net'
                 const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${user_jid}.json`);
                 const string_session = mega_url.replace('https://mega.nz/file/', '')
                 await sock.sendMessage(user_jid, {
-                    text: `Dark-Shadow=${string_session}`
-                });
-                await sock.sendMessage(owner, {
-                    text: `*QR SCANNED SUCCESFULLY*`
+                    text: `Dark-shadow=${string_session}`
                 });
                 await sock.ws.close()
                 fs.rmSync(auth_path, {
